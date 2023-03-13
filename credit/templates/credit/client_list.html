@@ -1,0 +1,30 @@
+{% extends 'credit/base.html' %}
+{% block content %}
+
+<div class="container" style="margin-top: 50px">
+    <h3 class="text-center" style="margin-bottom: 30px">Client list</h3>
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Citizenship</th>
+      <th scope="col">Birth year</th>
+      <th scope="col">Work place</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for client in object_list %}
+        <tr>
+            <th scope="row">{{client.id}}</th>
+            <td>{{ client.name }}</td>
+        <td>{{ client.citizenship }}</td>
+        <td>{{ client.birth_year }}</td>
+        <td>{{ client.work_place }}</td>
+        </tr>
+{% endfor %}
+  </tbody>
+</table>
+</div>
+
+{% endblock content %}

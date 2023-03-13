@@ -1,0 +1,27 @@
+{% extends 'credit/base.html' %}
+{% block content %}
+
+<div class="container" style="margin-top: 50px">
+    <h3 class="text-center" style="margin-bottom: 30px">Credit detail</h3>
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Sum</th>
+      <th scope="col">Date</th>
+      <th scope="col">Credit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <th scope="row">{{object.id}}</th>
+        <td>{{ object.sum }}</td>
+        <td>{{ object.date }}</td>
+        <td>{{ object.credit }}</td>
+        <td>{{ object.account.number }}</td>
+        <td>{{ object.account.account_type }}</td>
+  </tbody>
+</table>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends 'credit/base.html' %}
+{% block content %}
+
+<div class="container" style="margin-top: 50px">
+    <h3 class="text-center" style="margin-bottom: 30px">Client detail</h3>
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Citizenship</th>
+      <th scope="col">Birth year</th>
+      <th scope="col">Work place</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <th scope="row">{{object.id}}</th>
+        <td>{{ object.name }}</td>
+        <td>{{ object.citizenship }}</td>
+        <td>{{ object.birth_year }}</td>
+        <td>{{ object.work_place }}</td>
+        {% for client in object.customers.all %}
+        <td>{{ client.number }}</td>
+        <td>{{ client.account_type }}</td>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+{% endblock content %}
